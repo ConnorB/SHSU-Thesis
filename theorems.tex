@@ -1,0 +1,36 @@
+%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
+% THEOREM ENVIRONMENTS 
+%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
+
+% As set up here, all theorem-class objects will be numbered with
+% the same counter, starting with 1.
+% This may be changed if the author prefers.
+% For example, you can change this setup to start 
+%  with 1 at every new chapter; and set numbers to have
+%  the form <chapter>.<theorem>.  
+
+%\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}%[chapter]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{xca}[theorem]{Exercise}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+%%%%%%%%%%%%%%%
+
+\endinput
+
+%-----------------------------------------------------------------------
+% End of theorems.tex
+%-----------------------------------------------------------------------

@@ -1,0 +1,90 @@
+%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
+% LaTeX COMMANDS
+%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
+%Im tired of typing grams of o2 per meter2 per day 
+\sisetup{qualifier-mode = phrase, qualifier-phrase = \ } 
+\DeclareSIUnit\goxy{\gram\of{O_2~}\per\square\meter\per\day}
+
+% Miscellaneous Special Capitals
+\newcommand{\zz}{\mathbb{Z}}
+\newcommand{\nn}{\mathbb{N}}
+\newcommand{\pp}{\mathbb{P}}
+\newcommand{\qq}{\mathbb{Q}}
+\newcommand{\rr}{\mathbb{R}}
+\newcommand{\cc}{\mathbb{C}}
+\newcommand{\kk}{\bm{k}}
+\newcommand{\xx}{\bm{x}}
+\newcommand{\bfa}{\bm{a}}
+\newcommand{\bfb}{\bm{b}}
+\newcommand{\sm}{\mathscr{M}}
+\newcommand{\sg}{\mathscr{S}}
+\newcommand{\LL}{\mathscr{L}}
+\newcommand{\rD}{\widetilde{\Delta}}
+\newcommand{\rL}{\widetilde{\LL}}
+\newcommand{\rV}{\widetilde{V}}
+\newcommand{\GG}{\bm{G}}
+\newcommand{\HH}{\bm{H}}
+\newcommand{\bfs}{\bm{s}}
+
+%Miscellaneous symbols
+\newcommand{\di}{\"}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\newcommand{\os}{\overset}
+\newcommand{\us}{\underset}
+\newcommand{\perpp}{\mbox{$\perp\!\!\!\perp$}}
+\newcommand{\Times}{\!\times\!}
+\newcommand{\lra}{\longrightarrow} 
+\newcommand{\Lra}{\Longrightarrow}
+\newcommand{\lto}{\longleftarrow}
+\newcommand{\lf}{\left}
+\newcommand{\rt}{\right}
+\newcommand{\bv}{\, \big\vert \,}
+\newcommand{\wt}{\widetilde}
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+
+%Miscellaneous Greek letters
+\newcommand{\eps}{\ensuremath{\epsilon}}
+\newcommand{\ga}{\ensuremath{\gamma}}
+
+%Miscellaneous operators
+\DeclareMathOperator{\coker}{Coker}
+\DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\smax}{\sigma_{\mathrm{max}}}
+\DeclareMathOperator{\tail}{tail}
+\DeclareMathOperator{\head}{head}
+\DeclareMathOperator{\outdeg}{outdeg}
+\DeclareMathOperator{\indeg}{indeg}
+\DeclareMathOperator{\supp}{supp}
+
+% Displaystyle in $$ mode
+\newcommand{\ds}{\displaystyle}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% EXTRA COMMANDS 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\sxy}[2]{\sum_{i=#1}^{#2}}
+\newcommand{\res}[3]{$ 0 \leftarrow S^{#1} \leftarrow S^{#2} \leftarrow S^{#3} \leftarrow 0$}
+%  Blank box placeholder for figures 
+% To reserve space that later will be used for a table or figure.
+\newcommand{\blankbox}[2]{%
+  \parbox{\columnwidth}{\centering
+%    Set fboxsep to 0 so that the actual size of the box will match the
+%    given measurements more closely.
+    \setlength{\fboxsep}{0pt}%
+    \fbox{\raisebox{0pt}[#2]{\hspace{#1}}}%
+  }%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\endinput
+
+%-----------------------------------------------------------------------
+% End of commands.tex
+%-----------------------------------------------------------------------

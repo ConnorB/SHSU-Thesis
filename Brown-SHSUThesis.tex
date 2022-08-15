@@ -1,0 +1,194 @@
+% Most users will need to modify ONLY the parts in this file that are marked as ``MODIFY ME''
+\input{shsu-style}
+
+\input{theorems}
+
+\input{commands}
+
+% \makeatletter
+%  \renewcommand*\l@chapter[2]{%
+%  \ifnum \c@tocdepth >\m@ne
+%  \addpenalty{-\@highpenalty}%
+%  \vskip \@plus\p@
+%  \setlength\@tempdima{1.5em}%
+%  \begingroup
+%   \let\oldnumberline=\numberline
+%   \def\numberline{\chaptername~\oldnumberline}%
+%   \settowidth{\@tempdimb}{\normalsize\textbf \chaptername~}%
+%   \advance\leftskip by \@tempdimb
+%   \parindent \z@ \rightskip \@pnumwidth
+%   \parfillskip -\@tempdima
+%   \leavevmode \textbf
+%   \advance\leftskip\@tempdima
+%   \hskip -\leftskip
+%   #1\nobreak\normalfont\leaders\hbox{$\m@th
+%         \mkern \@dotsep mu\hbox{.}\mkern \@dotsep
+%         mu$}\hfill\nobreak\hb@xt@\@pnumwidth{\hss #2}\par
+%       \penalty\@highpenalty
+%     \endgroup
+%   \fi}
+
+%%%%%%%%%%%%%%
+%% MODIFY ME %%%%%
+%%%% BEGIN %%%%%%
+%%%%%%%%%%%%%%
+% The following command specifies which chapters and appendices
+% are included in the document.
+%
+% If you remove an entry from this list, the final pdf file will not include that chapter.
+% But the chapter numbering, page numbering, table of contents, and other automatic counters
+% will still take into account all the chapters that appear below as \include{}
+%
+% Note that there are no spaces in between entries in this list.
+\includeonly{chap1,chap2,chap3,chap4,appendix1,vita}
+%%%%%%%%%%%%%%
+%%%%% END  %%%%%
+%%%%%%%%%%%%%%
+
+% \makeindex
+\begin{document}
+\frontmatter
+
+%%%%%%%%%%%%%%
+%% MODIFY ME %%%%%
+%%%% BEGIN %%%%%%
+%%%%%%%%%%%%%%
+\newcommand{\thesisname}{Ecosystem  metabolism  of  coastal  Texas  streams  across  precipitation regimes and land use gradients}
+\newcommand{\authorname}{Connor L. Brown}
+\newcommand{\degreename}{Master of Science}
+\newcommand{\fulldegreename}{Master of Science in Biology}
+\newcommand{\university}{Sam Houston State University}
+\newcommand{\monthyear}{May, 2022}
+
+\maketitle
+\clearpage
+%%%%%%%%%%%%%
+%%%%% END  %%%%%%
+%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% You can LaTeX the Approval Sheet. However, it may
+% not entirely fit the spacing of the Word template
+% provided by the library.
+% I AM EXTREMELY INTERESTED IN TESTING IF THIS WORKS
+% To do this, uncomment the following two lines and then comment
+% the third line below.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\setcounter{page}{2}
+\input{approval-sheet}
+%
+%\setcounter{page}{3}
+
+%\input{dedication}
+
+\input{abstract}
+
+\input{acknowledgements}
+\clearpage
+\pagestyle{plain}
+\addcontentsline{toc}{chapter}{TABLE OF CONTENTS}
+\tableofcontents
+\clearpage
+
+
+
+\addcontentsline{toc}{chapter}{LIST OF TABLES}
+\listoftables
+\clearpage
+
+\addcontentsline{toc}{chapter}{LIST OF FIGURES}
+\listoffigures
+
+\addtocontents{toc}{%
+\protect\noindent\normalfont CHAPTER \protect\par}
+
+\backmatter
+
+  
+\mainmatter
+
+\pagestyle{fancy}
+\fancypagestyle{plain}{\pagestyle{fancy}}
+
+%%%%%%%%%%%%%%
+%% MODIFY ME %%%%%
+%%%% BEGIN %%%%%%
+%%%%%%%%%%%%%%
+% Main content
+\include{chap1}
+
+\include{chap2}
+
+\include{chap3}
+
+\include{chap4}
+%%%%%%%%%%%%%%
+%%%%% END  %%%%%%
+%%%%%%%%%%%%%%
+
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% REFERENCES
+%  Bibliography prepared with BibTeX using amsplain or amsalpha.
+% I modified amsplain and amsalpha to abbreviate the first name of each author.
+\addcontentsline{toc}{chapter}{REFERENCES}
+
+\bibliographystyle{amsplain} 
+%\bibliographystyle{babamspl} 
+
+% \bibliographystyle{abbrvamsplain}
+ \bibliography{Bibliography}
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\backmatter
+%%%%%%%%%%%%%%%
+% APPENDIX
+%%%%%%%%%%%%%%%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The following two lines are old and must not be uncommented.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\addtocontents{toc}{%
+ %\protect\noindent\normalfont APPENDIX\protect\par}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Since the format of the CHAPTER headings was changed,
+% I need to manually change the format for the Appendix heading.
+\titleformat{\chapter}[display]
+{\normalfont\bfseries\filcenter}
+{APPENDIX \thechapter}
+{0ex}
+{\titlerule[0pt]
+\vspace{0ex}%
+}
+[\vspace{0ex}%
+{\titlerule[0pt]}]
+\titlespacing{\chapter} {0pt}{-20pt}{12pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%%%%%%%%%%%%%%
+%% MODIFY ME %%%%%
+%%%% BEGIN %%%%%%
+%%%%%%%%%%%%%%
+% Comment the following lines if there are no appendices
+%
+\begin{appendices}
+
+\include{appendix1}
+
+%\include{appendix2}
+
+\end{appendices}
+%%%%%%%%%%%%%%
+%%%%% END  %%%%%%
+%%%%%%%%%%%%%%
+
+% \backmatter
+
+\input{vita}
+
+
+\end{document}  % The End

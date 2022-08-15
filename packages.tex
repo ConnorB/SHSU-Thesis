@@ -1,0 +1,99 @@
+%%%%%%%%%%
+%%%%%%%%%%
+% PACKAGES
+%%%%%%%%%%
+%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% I have added the packages I need to provide the correct formatting. 
+% I have also added some packages that are commonly used.
+% If you need to add more packages then you should do it at the end of this list.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% This package defines commands to access bold math symbols.  through \bm
+%\usepackage{bm} 
+
+
+%
+% This package provide some additional commands to enhance
+% the quality of tables in LaTeX.
+\usepackage{booktabs}
+%
+% This package defines a single environment tabu to make all kinds of tabulars in text or in math mode provided that they do not split across pages.
+% tabu is more flexible that tabular, tabular*, tabularx and array and extends the possibilities.
+\usepackage{tabu}
+%
+% delarray introduces delimeters \begin{array}({cc})
+% The tabulary environment expands specific columns to meet the table’s width requirement 
+\usepackage{array,delarray,tabulary,colortbl}
+%
+% enumitem package permits adjustment of list parameters
+%\begin{enumerate}[topsep=0pt, partopsep=0pt]
+%to suppress all spacing above and below your list
+%\begin{enumerate}[itemsep=2pt,parsep=2pt]
+%to set spacing between items and between paragraphs within items
+%\begin{enumerate}[label=(\emph{\alph*})] or \Alph, \arabic, \roman and \Roman
+\usepackage{enumitem} 
+%
+% Provides:
+% the IEEE itemize, enumerate and description list environments
+% the complete IEEEeqnarray family for producing multiline equations
+% as well as matrices and tables, including the IEEEeqnarray support
+% commands.
+% This package clashes with enumitem
+% \usepackage[retainorgcmds]{IEEEtrantools}
+%
+% Create tabular cells spanning multiple rows.
+\usepackage{multirow}
+%
+% The package rotating gives you the possibility to rotate any object of an arbitrary angle. 
+\usepackage{rotating}
+%
+% Provides command adjustwidth to locally change the margins of the text, and commands \changetext and \changepage for more radical changes to the page design mid-way through a document.
+\usepackage{changepage}
+%
+% This package provides a verbatim command which is useful in case you want to 
+% include the outcome of a computation exactly like it is displayed on the computer.
+\usepackage{verbatim}
+%
+% float provides the option [H] for floating environments
+% \afterpage, that causes the commands specified in its argument to be expanded
+% after the curent page is output 
+% afterpage places the float 'somewhere close' 
+% \afterpage{\clearpage\begin{figure}[H] ...\end{figure}}
+%\usepackage{afterpage,float}
+%
+% Using the package listings you can add non-formatted text as you would do with \begin{verbatim} but its main aim is to include the source code of any programming language within your document. 
+%\usepackage{listings}
+%
+% \xspace should be used at the end of a macro designed to be used mainly in text. 
+% It adds a space unless the macro is followed by certain punctuation characters.
+%\usepackage{xspace}
+%
+%to anable \mathscr command for math script fonts
+\usepackage[mathscr]{euscript}
+%
+% The mathrsfs package uses a really fancy script font (the name stands for "Ralph Smith's Formal Script") which is already part of most modern TeX distributions. 
+% The package creates a new command \mathscr.
+%\usepackage{mathrsfs}
+%
+% Martin Vogel's Symbols (marvosym) font.
+% \usepackage{marvosym}
+%
+% Fonts and macros for IPA phonetics characters.
+%\usepackage{tipa}
+\usepackage{makecell}
+%\usepackage{enumitem}
+
+\usepackage{lscape}
+\usepackage[section]{placeins}
+
+%Nice SI units
+\usepackage{siunitx}
+
+
+\endinput
+
+%-----------------------------------------------------------------------
+% End of packages.tex
+%-----------------------------------------------------------------------

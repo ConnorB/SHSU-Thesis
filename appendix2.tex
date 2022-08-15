@@ -1,0 +1,180 @@
+%-----------------------------------------------------------------------------
+% Beginning of appendix2.tex
+%-----------------------------------------------------------------------------
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{APPENDIX B}
+\label{cha:app2}
+
+% Appendices MUST NOT have sections or subsections
+%\vspace{-12pt}
+%\section{Some Definitions}
+
+\indent \textbf{Anomaly detection.} Detecting anomaly for given statistical models.
+
+\textbf{Classification of objects (Spectral classification).} Classifying
+objects in a HSI data set.
+
+\textbf{Demixing.} Finding material components in a raster cell.
+
+\textbf{Electromagnetic radiation (EMR).} The energy in the form of
+electromagnetic waves.
+
+\textbf{Electromagnetic spectrum.} The entire family of electromagnetic
+radiation, together with all its various wavelengths.
+
+\textbf{Endmember spectra.} The \textquotedblleft pure\textquotedblright%
+\ spectra that contribute to mixed spectra.
+
+\textbf{Fused images.} A fused image is a combination of the HSI image and the
+HRI image (to be mentioned below). It is usually the best because of high
+resolution from the HRI camera and color information from the HSI sensor. This
+combination results in sufficiently high image resolution and contrast to
+facilitate image evaluation by the human eyes.
+
+\textbf{High Resolution Imagery (HRI).} A high-resolution image (HRI) camera,
+which captures black-and-white or panchromatic images, is usually integrated
+in an HSI system to capture the same reflected light. However, the HRI camera
+does not have a diffraction grating to disperse the incoming reflected light.
+Instead, the incoming light is directed to a wider CCD (Charge-Couple Device) to capture more image
+data. The HSI resolution is typically one meter per pixel, and the HRI
+resolution is much finer: typically a few inches square per pixel.
+
+\textbf{Hyperspectral imaging.} The imagery consists of a larger number of
+spectral bands so that the totality of these bands is numerically sufficient
+to represent a (continuous) spectral curve for each raster cell.
+
+\textbf{Illumination factors.} The incoming solar energy varies greatly in
+wavelengths, peaking in the range of visible light. To convert spectral
+radiance to spectral reflectance, the illumination factors must be accounted.
+Illumination factors taken into account includes both the illumination
+geometry (angles of incoming light, etc.,) and shadowing. Other factors, such
+as atmospheric and sensor effects, are also taken into consideration.
+
+\textbf{Macroscopic and intimate mixtures.} Microscopic mixture is a linear
+combination of its endmembers, while an intimate mixture is a nonlinear
+mixture of its endmembers.
+
+\textbf{Mixed spectra.} Mixed spectra, also known as composite spectra, are
+contributed by more than one material components.
+
+\textbf{Multi-spectral imaging.} The imaging bins the spectrum into a handful
+of bands.
+
+\textbf{Raster cell.} A pixel in a hyperspectral image.
+
+\textbf{Reflectance conversion.} Radiance values must be converted to
+reflectance values before comparing image spectra with reference reflectance
+spectra. This is called atmospheric correction. The method for converting the
+radiance to reflectance is also called reflectance conversion. The image-based
+correction methods include \emph{Flat Field Conversion} and \emph{Internal
+Average Relative Reflectance Conversion}. They apply the model $R_{1}=mR_{2},$
+where $R_{1}$ is the reflectance, $R_{2}$ is the radiance, and $m$ is the
+conversion slope. Some conversions also apply the linear model $R_{1}%
+=-c+mR_{2},$ where $c$ is an offset that needs to be abstracted from the
+radiance. The popular conversions are
+
+\begin{enumerate}
+\item \emph{Flat Field Conversion}. A flat field has a relatively flat
+spectral reflectance curve. The mean spectrum of such an area would be
+dominated by the combined effects of solar irradiance and atmospheric
+scattering and absorption. The scene is converted to "relative" reflectance by
+dividing each image spectrum by the flat field mean spectrum.
+
+\item \emph{Internal Average Relative Reflectance (IARR) Conversion}. This
+technique is used when no knowledge of the surface materials is available. The
+technique calculates a relative reflectance by dividing each spectrum (pixel)
+by the scene average spectrum.
+\end{enumerate}
+
+\textbf{Region segmentation.} Partitioning the spatial region of a
+hyperspectral image into multiple regions (sets of pixels). The goal of
+segmentation is to simplify and/or change the representation of an HSI image
+into something that is more meaningful and easier to analyze. Region
+segmentation is typically used to locate objects and boundaries (lines,
+curves, etc.) in images.%
+
+\textbf{Remote sensing.} Sensing something from a distance. The following
+processes affect the light that is sensed by a remote sensing system:
+
+% Appendices MUST NOT have sections or subsections
+% \section{A Few More Definitions.}
+
+\begin{enumerate}
+\item \emph{Illumination}. Light has to illuminate the ground and objects on
+the ground before they can reflect any light. In the typical remote sensing
+environment, which is outdoors, illumination comes from the sun. We call it
+solar illumination.
+
+\item \emph{Atmospheric Absorption and Scattering of Illumination Light}. As
+solar illumination travels through the atmosphere, some wavelengths are
+absorbed and some are scattered. Scattering is the change in direction of a
+light wave that occurs when it strikes a molecule or particle in the atmosphere.
+
+\item \emph{Reflection}. Some of the light that illuminates the ground and
+objects on the ground is reflected. The wavelengths that are reflected depend
+on the wavelength content of the illumination and on the object's reflectance.
+The area surrounding a reflecting object also reflects light, and some of this
+light is reflected into the remote sensor.
+
+\item \emph{Atmospheric Absorption and Scattering of Reflected Light}. As
+reflected light travels through the atmosphere to the remote sensor, some
+wavelengths are absorbed, some are scattered away from the sensor, and some
+are scattered into the sensor.
+\end{enumerate}
+
+These four effects all change the light that reaches the remote sensor from
+the original light source. After the reflected light is captured by the remote
+sensor, the light is further affected by how the sensor converts the captured
+light into electrical signals. These effects that occur in the sensor are
+called sensor effects.
+
+\textbf{Spectral curve.} It is the one-dimensional curve of a spectral reflectance.
+
+\textbf{Spectral libraries.} A spectral library consists of a list of spectral
+curves with data of their characteristics corresponding to specific materials
+such as mines, plants, etc.
+
+\textbf{Spectral radiance.} It is the measurable reflected light reaching the
+sensor. The spectral reflectance of the material is only one factor affecting
+it. It is also dependent of the spectra of the input solar energy interactions
+of this energy during its downward and upward passages through the atmosphere, etc
+
+\textbf{Shape recognition.} Recognizing the shape of a detected object.
+
+\textbf{Spectral reflectance.} It is the ratio of reflected energy to incident
+energy as a function of wavelengths. A certain material has its own spectral
+reflectance. The light that is reflected by an object depends on two things:
+(1) light that illuminates the object; and (2) the reflectance of the object.
+Reflectance is a physical property of the object surface. It is the percentage
+of incident EMR of each wavelength that is reflected by the object. Because it
+is a physical property, it is not affected by the light that illuminates the object.
+
+\textbf{Spectral reflection.} It is the observed reflected energy, represented
+as a function of wavelengths under illumination. It is affected by both
+reflectance of the object and the light that illustrates the object. If an
+object was illuminated by balanced white light, and if there was no
+atmospheric absorption or scatter, and if the sensor was perfect, then the
+wavelength composition of reflected light detected by an HSI sensor would
+match the reflectance, or spectral signature of the object.
+
+\textbf{Spectral space.} The $n$-dimensional space, where each point is the
+spectra of a material or a group of materials.
+
+\textbf{Spectral signature.} A unique characteristic of an object, represented
+by some chart of the plot of the object's reflectance as a function of its
+wavelength. It can be thought of as an EMR \textquotedblleft
+fingerprint\textquotedblright\ of the object.
+
+\textbf{Spectroscopy.} The study of the wavelength composition of
+electromagnetic radiation. It is fundamental to how HSI technology works.
+
+\textbf{Signature matching.} Matching reflected light of pixels to spectral
+signatures of given objects.
+
+\endinput
+%-----------------------------------------------------------------------------
+% End of appendix1.tex
+%-----------------------------------------------------------------------------
+

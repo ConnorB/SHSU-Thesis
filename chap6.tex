@@ -1,0 +1,197 @@
+%-----------------------------------------------------------------------
+% Beginning of chap6.tex
+%-----------------------------------------------------------------------
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\chapter{FOR DEMO FIGS AND TABLES ONLY}
+\label{cha:demos}
+
+ \vspace{-12pt}
+\section{Some Graphs}\label{sec:some}
+To add graphs in your thesis, you may use the following methods. The first figure is showing in the Chapter 2. The second figure is in pdf-format. You may use "scale" option to rescale it.
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[scale=1]{7bridge.pdf}\label{Fig:2}
+\caption{Seven Briges.}
+\end{center}
+\end{figure}
+
+The third figure contains three graphs: Swiss Roll, S-Curve, and 3D Cluster, defined as follows.
+\begin{itemize}
+\item Parametric equation of the Swiss Roll:
+\[
+\begin{cases}
+  x = &  (\frac{3\pi}{2}(1+2t))\cos(\frac{3\pi}{2}(1+2t)),\\
+  y = &  s,\\
+  z = &  (\frac{3\pi}{2}(1+2t))\sin(\frac{3\pi}{2}(1+2t)),
+  \end{cases}
+  \quad 0\le s \le L,\ \vert t \vert \le 1.
+\]
+\item Parametric equation of the S-Curve:
+\[
+\begin{cases}
+   x = & -\cos(1.5\pi t),  \\
+   y = &  s,\\
+   z = & \begin{cases}
+                -\sin(1.5\pi t) &  0\le t \le 1,\\
+                2+\sin(1.5 \pi t) & 1< t\le 2,
+         \end{cases}
+\end{cases}
+     \quad 0\le s \le L,\  0 \le t \le 2\ .
+\]
+\item Construction of the 3D Clusters: The 3D cluster in this experiment is not a surface in the usual sense, but consists of three separated balls, with centers connected by two line segments.
+\end{itemize}
+We show their graphs in the Figure~\ref{fig0}.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics
+  [
+  width=  1.5in,
+  height= 1.2in,
+ % keepaspectratio
+  ]
+  {SwissRoll.pdf}
+  \includegraphics
+  [
+  width=  1.5in,
+ % height= 1.2in,
+ % keepaspectratio
+  ]
+  {Scurve.pdf}
+  \includegraphics
+  [
+  width=  1.5in,
+  %height= 1.2in,
+ % keepaspectratio
+  ]
+  {3dclusters.pdf}
+   \caption{Left: Swiss Roll. Middle: S Curve. Right: 3D Cluster.
+   }
+   \label{fig0}
+\end{center}
+\end{figure}
+
+\section{Some Tables} \label{sec:tables}
+ 
+In the first example of the Swiss Roll dataset, Gaussian random projection (i.e. type-1) is used for RAT 1, $\cdots$, RAT 4, and the  experimental DR results are compiled in Table 1.  Observe that all RAT algorithms are much more efficient than the standard Isomap algorithm, while the deviations of each RAT from Isomap are negligible.
+
+We assume throughout this section that $G$ is a finite group and $S$ is subset of $G$. The \textbf{Cayley graph} with respect to G is the graph $\Gamma = \Gamma (G,S)$ such that the vertex set $V$ is exactly the members of $G$ and, for all vertices $x,y\in V$,  $x$ is adjacent to $y$ if and only if $y = sx$ for some $s\in S$.
+
+For this paper, we consider only \textbf{simple} Cayley graphs. To achieve this, we choose our set $S$ so that the identity element of $G$ is not in $S$ and if $s\in S$ then $s^{-1}\in S$. In addition to being simple, based on the group structure built into a Cayley graph, we note that our graphs are all regular.
+
+A special type of regular graph, called strongly regular, was first introduced by  R.C. Bose in 1963 \cite{BCN}. Given a regular graph with $v$ vertices of degree $k$, we can define a \textbf{strongly regular graph}, denoted $SRG(v,k,\lambda, \mu)$, to be such that there exist integers $\lambda$ and $\mu$ satisfying that every pair of adjacent vertices have $\lambda$ common neighbors and every pair of non-adjacent vertices have $\mu$ common neighbors. Probably the most famous example of a strongly regular graph is the Petersen graph, which is a $SRG(10,3,0,1)$:
+
+
+\begin{table}[htb]
+\begin{center}
+\begin{tabular}
+[c]{|l|c|c|c|c|c|}\hline
+Algorithm & CPU time & eigen 1 & eigen 2 & eigen 3 &  deviation  \\
+\hline
+Isomaps &  3.8179  & 1.0000  & 0.9543  & 0.0290  &     \\
+\hline
+RAT         1 &  0.0675  & 0.9972  & 0.9416  & 0.0173  & 0.0030    \\
+\hline
+RAT         2 &  0.2253  & 1.0000  & 0.9542  & 0.0280  & 0.0001    \\
+\hline
+RAT         3 &  0.5190  & 1.0000  & 0.9543  & 0.0285  & 0.0001    \\
+\hline
+RAT         4 &  0.5916  & 1.0000  & 0.9543  & 0.0285  & 0.0000    \\
+\hline
+\end{tabular}
+\end{center}
+\caption{\small{Comparison of standard Isomap algorithm with RAT applied to Isomap DRK: All RAT algorithms employ the $6$-neighborhood and Gaussian (i.e. type-1) random projection. For normalization, all eigenvalues are divided by the first eigenvalue = 1654657 of the DRK.}}
+\label{Tbl1}
+\end{table}
+
+In the second example of the S-curve dataset, Gaussian random projection (i.e. type-1) is again used for RAT 1, $\cdots$, RAT 4,  and the  experimental DR results are compiled in Table 2.  Observe that all RAT algorithms are much more efficient than the standard Isomap algorithm, while the deviations of each  RAT from Isomap are again negligible.
+We assume throughout this section that $G$ is a finite group and $S$ is subset of $G$. The \textbf{Cayley graph} with respect to G is the graph $\Gamma = \Gamma (G,S)$ such that the vertex set $V$ is exactly the members of $G$ and, for all vertices $x,y\in V$,  $x$ is adjacent to $y$ if and only if $y = sx$ for some $s\in S$.
+
+For this paper, we consider only \textbf{simple} Cayley graphs. To achieve this, we choose our set $S$ so that the identity element of $G$ is not in $S$ and if $s\in S$ then $s^{-1}\in S$. In addition to being simple, based on the group structure built into a Cayley graph, we note that our graphs are all regular.
+
+A special type of regular graph, called strongly regular, was first introduced by  R.C. Bose in 1963 \cite{BCN}. Given a regular graph with $v$ vertices of degree $k$, we can define a \textbf{strongly regular graph}, denoted $SRG(v,k,\lambda, \mu)$, to be such that there exist integers $\lambda$ and $\mu$ satisfying that every pair of adjacent vertices have $\lambda$ common neighbors and every pair of non-adjacent vertices have $\mu$ common neighbors. Probably the most famous example of a strongly regular graph is the Petersen graph, which is a $SRG(10,3,0,1)$:
+
+We assume throughout this section that $G$ is a finite group and $S$ is subset of $G$. The \textbf{Cayley graph} with respect to G is the graph $\Gamma = \Gamma (G,S)$ such that the vertex set $V$ is exactly the members of $G$ and, for all vertices $x,y\in V$,  $x$ is adjacent to $y$ if and only if $y = sx$ for some $s\in S$.
+
+For this paper, we consider only \textbf{simple} Cayley graphs. To achieve this, we choose our set $S$ so that the identity element of $G$ is not in $S$ and if $s\in S$ then $s^{-1}\in S$. In addition to being simple, based on the group structure built into a Cayley graph, we note that our graphs are all regular.
+
+A special type of regular graph, called strongly regular, was first introduced by  R.C. Bose in 1963 \cite{BCN}. Given a regular graph with $v$ vertices of degree $k$, we can define a \textbf{strongly regular graph}, denoted $SRG(v,k,\lambda, \mu)$, to be such that there exist integers $\lambda$ and $\mu$ satisfying that every pair of adjacent vertices have $\lambda$ common neighbors and every pair of non-adjacent vertices have $\mu$ common neighbors. Probably the most famous example of a strongly regular graph is the Petersen graph, which is a $SRG(10,3,0,1)$:
+
+We assume throughout this section that $G$ is a finite group and $S$ is subset of $G$. The \textbf{Cayley graph} with respect to G is the graph $\Gamma = \Gamma (G,S)$ such that the vertex set $V$ is exactly the members of $G$ and, for all vertices $x,y\in V$,  $x$ is adjacent to $y$ if and only if $y = sx$ for some $s\in S$.
+
+For this paper, we consider only \textbf{simple} Cayley graphs. To achieve this, we choose our set $S$ so that the identity element of $G$ is not in $S$ and if $s\in S$ then $s^{-1}\in S$. In addition to being simple, based on the group structure built into a Cayley graph, we note that our graphs are all regular.
+
+A special type of regular graph, called strongly regular, was first introduced by  R.C. Bose in 1963 \cite{BCN}. Given a regular graph with $v$ vertices of degree $k$, we can define a \textbf{strongly regular graph}, denoted $SRG(v,k,\lambda, \mu)$, to be such that there exist integers $\lambda$ and $\mu$ satisfying that every pair of adjacent vertices have $\lambda$ common neighbors and every pair of non-adjacent vertices have $\mu$ common neighbors. Probably the most famous example of a strongly regular graph is the Petersen graph, which is a $SRG(10,3,0,1)$:
+
+
+
+\begin{table}[htb]
+\begin{center}
+\begin{tabular}
+[c]{|l|c|c|c|c|c|}\hline
+Algorithm & CPU time & eigen 1 & eigen 2 & eigen 3 &  deviation    \\ \hline
+Isomaps &  3.4289  & 1.0000  & 0.2762  & 0.0199  &    \\ \hline
+RAT          1 &  0.0642  & 0.9999  & 0.2753  & 0.0099  & 0.0023    \\ \hline
+RAT          2 &  0.2043  & 1.0000  & 0.2762  & 0.0190  & 0.0001    \\ \hline
+RAT          3 &  0.5109  & 1.0000  & 0.2762  & 0.0197  & 0.0001    \\ \hline
+RAT          4 &  0.5662  & 1.0000  & 0.2762  & 0.0197  & 0.0001    \\ \hline
+\end{tabular}
+\caption{\small{Comparison of standard Isomap algorithm with RAT applied to Isomap DRK: All RAT algorithms employ the $6$-neighborhood and Gaussian (i.e. type-1) random projection. For normalization, all eigenvalues are divided by the first eigenvalue = 17553 of the DRK.}}
+\end{center}
+\label{Tbl2}
+\end{table}
+
+In the third example of the 3D cluster dataset, Gaussian random projection (i.e. type-1) is again used for RAT 1, $\cdots$, RAT 4,  and the experimental DR results are compiled in Table 3.  Observe that all RAT algorithms are much more efficient than the standard Isomap algorithm, while the deviations of each  RAT from Isomap are again negligible.
+We assume throughout this section that $G$ is a finite group and $S$ is subset of $G$. The \textbf{Cayley graph} with respect to G is the graph $\Gamma = \Gamma (G,S)$ such that the vertex set $V$ is exactly the members of $G$ and, for all vertices $x,y\in V$,  $x$ is adjacent to $y$ if and only if $y = sx$ for some $s\in S$.
+
+For this paper, we consider only \textbf{simple} Cayley graphs. To achieve this, we choose our set $S$ so that the identity element of $G$ is not in $S$ and if $s\in S$ then $s^{-1}\in S$. In addition to being simple, based on the group structure built into a Cayley graph, we note that our graphs are all regular.
+
+A special type of regular graph, called strongly regular, was first introduced by  R.C. Bose in 1963 \cite{BCN}. Given a regular graph with $v$ vertices of degree $k$, we can define a \textbf{strongly regular graph}, denoted $SRG(v,k,\lambda, \mu)$, to be such that there exist integers $\lambda$ and $\mu$ satisfying that every pair of adjacent vertices have $\lambda$ common neighbors and every pair of non-adjacent vertices have $\mu$ common neighbors. Probably the most famous example of a strongly regular graph is the Petersen graph, which is a $SRG(10,3,0,1)$:
+
+We assume throughout this section that $G$ is a finite group and $S$ is subset of $G$. The \textbf{Cayley graph} with respect to G is the graph $\Gamma = \Gamma (G,S)$ such that the vertex set $V$ is exactly the members of $G$ and, for all vertices $x,y\in V$,  $x$ is adjacent to $y$ if and only if $y = sx$ for some $s\in S$.
+
+For this paper, we consider only \textbf{simple} Cayley graphs. To achieve this, we choose our set $S$ so that the identity element of $G$ is not in $S$ and if $s\in S$ then $s^{-1}\in S$. In addition to being simple, based on the group structure built into a Cayley graph, we note that our graphs are all regular.
+
+A special type of regular graph, called strongly regular, was first introduced by  R.C. Bose in 1963 \cite{BCN}. Given a regular graph with $v$ vertices of degree $k$, we can define a \textbf{strongly regular graph}, denoted $SRG(v,k,\lambda, \mu)$, to be such that there exist integers $\lambda$ and $\mu$ satisfying that every pair of adjacent vertices have $\lambda$ common neighbors and every pair of non-adjacent vertices have $\mu$ common neighbors. Probably the most famous example of a strongly regular graph is the Petersen graph, which is a $SRG(10,3,0,1)$:
+
+\begin{table}[htb]
+\begin{center}
+\begin{tabular}
+[c]{|l|c|c|c|c|c|}\hline
+Algorithm & CPU time & eigen 1 & eigen 2 & eigen 3 &  deviation   \\ \hline
+Isomaps &  4.3294  & 1.0000  & 0.1454  & 0.0049  &    \\ \hline
+RAT          1 &  0.0756  & 0.9999  & 0.1453  & 0.0038  & 0.0009   \\ \hline
+RAT          2 &  0.2123  & 1.0000  & 0.1454  & 0.0049  & 0.0000   \\ \hline
+RAT          3 &  0.7380  & 1.0000  & 0.1454  & 0.0049  & 0.0000   \\ \hline
+RAT          4 &  0.7103  & 1.0000  & 0.1454  & 0.0049  & 0.0000   \\ \hline
+\end{tabular}
+\caption{\small{Comparison of standard Isomap algorithm with RAT applied to Isomap DRK: All RAT algorithms employ the $6$-neighborhood and Gaussian (i.e. type-1) random projection. For normalization, all eigenvalues are divided by the first eigenvalue = 22271 of the DRK.}}
+\end{center}
+ \label{Tbl3}
+\end{table}
+
+If your table is very wide, you can use the following method. The example below is gotten from Darwin Luna's thesis. 
+
+\begin{sidewaystable}[htb]
+\centering\caption{Heat Diffusion 10 steps with source term}\label{tab:2}
+\begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|c}
+\hline\noalign{\smallskip}
+$\Delta t \diagdown \Delta x$ & 0.00000 &  0.10000 &  0.20000 &  0.30000 &  0.40000 &  0.50000 &  0.60000 &  0.70000 &  0.80000 &  0.90000 &  1.00000\\
+\noalign{\smallskip}\hline\noalign{\smallskip}
+0 &.0.00000 &  0.30000 &  0.60000 &  0.90000 &  1.20000 &  1.50000 &  1.40000 &  1.30000  & 1.20000 &  1.10000 &  0.00000\\\hline
+ .01 & 0.00000 &  0.29660 &  0.58980 &  0.87280 &  1.12860  & 1.31301 &  1.31042 &  1.21826 &  1.04435 &  0.71478 &  0.00000\\\hline
+ .02 & 0.00000 &  0.28876 &  0.56967 &  0.83045 &  1.04889 &  1.18762  & 1.20096 &  1.10484 &  0.89529  & 0.53669 &  0.00000\\\hline
+ .03 & 0.00000 &  0.27718 &  0.54279 &  0.78151 &  0.97130 &  1.08348 &  1.09154 &  0.99017 &  0.77413 &  0.43694 &  0.00000\\\hline
+.04 &  0.00000 &  0.26307 &  0.51203 &  0.73022 &  0.89712 &  0.98983 &  0.98890 &  0.88533 &  0.67692 &  0.37129 &  0.00000\\
+\noalign{\smallskip}\hline
+\end{tabular}
+\end{sidewaystable}
+
+\endinput
+
+%-----------------------------------------------------------------------
+% End of chap6.tex
+%-----------------------------------------------------------------------
